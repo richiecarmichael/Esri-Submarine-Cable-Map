@@ -6,7 +6,7 @@ This application maps the global network of submarine communication cables. This
 
 Data for this application was prepared by [TeleGeography](https://www.telegeography.com/) and published [here](https://github.com/telegeography/www.submarinecablemap.com). This data represents a cartographic representation of the actual data. For more information on, and access to, the authoritative data please visit the [Global Bandwidth Research Service](https://www.telegeography.com/research-services/global-bandwidth-research-service/index.html).
 
-Data was downloaded from [here](https://www.google.com/fusiontables/DataSource?docid=1ThJlnFAEBqJdYWKCdcnqdsjSJE1mnzkwaOh3fL3X#map:id=3) and [here](https://www.google.com/fusiontables/DataSource?docid=117TmsWlGqILvN0UZYP9rhFhlWG_1lYdQw3-6CtTX#map:id=3) as KML documents. The data is current as of November 2015.
+Data was downloaded from [here](https://www.google.com/fusiontables/DataSource?docid=1ThJlnFAEBqJdYWKCdcnqdsjSJE1mnzkwaOh3fL3X#map:id=3) and [here](https://www.google.com/fusiontables/DataSource?docid=117TmsWlGqILvN0UZYP9rhFhlWG_1lYdQw3-6CtTX#map:id=3) as KML documents, in November 2015, and republished [here](http://www.arcgis.com/home/item.html?id=0475835d5b0f4029bd51866d5629ca10).
 
 #### Screenshots:
 ![](img/cable-app.png)
