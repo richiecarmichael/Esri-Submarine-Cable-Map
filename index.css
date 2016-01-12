@@ -1,0 +1,179 @@
+﻿/* -----------------------------------------------------------------------------------
+   Developed by the Applications Prototype Lab
+   (c) 2016 Esri | http://www.esri.com/legal/software-license  
+----------------------------------------------------------------------------------- */
+
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+*:focus {
+    outline: none;
+}
+
+#map {
+    position: absolute;
+    top: 0px;
+    left: 300px;
+    bottom: 0px;
+    right: 0px;
+    background-color: black;
+}
+
+#left-panel {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    width: 300px;
+    background-color: white;
+}
+
+#banner {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 45px;
+    background-color: #0071bc;
+}
+
+#banner-text {
+    position: absolute;
+    top: 5px;
+    left: 0px;
+    right: 0px;
+    text-align: center;
+    font-size: 26px;
+    font-weight: 400;
+    color: white;
+}
+
+#button-info {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 22px;
+    font-weight: 400;
+    color: white;
+    cursor:pointer;
+}
+
+#button-info:hover {
+    color: orange;
+}
+
+#content {
+    position: absolute;
+    top: 45px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+
+#toolbar {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+#search {
+    display: inline-block;
+    width: 145px;
+    margin-top: 5px;
+}
+
+#home-years {
+    width: 275px;
+}
+
+#home-cables, #home-cities {
+    max-height: 205px;
+}
+
+#year-cables, #cable-cities, #search-cables, #search-cities {
+    max-height: 410px;
+}
+
+#cable-owner {
+    width: 250px;
+}
+
+h4 {
+    font-weight: 700;
+    margin-bottom: 3px;
+}
+
+#pages {
+    position: absolute;
+    top: 45px;
+    left: 10px;
+    right: 0px;
+    bottom: 0px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#panel-info {
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color:white;
+    padding: 20px 10px 10px 10px;
+}
+
+#close-panel-info {
+    position: absolute;
+    left: 120px;
+    bottom: 10px;
+}
+
+.rc-page {
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.rc-link {
+    color: #337ab7;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.rc-link:hover {
+    text-decoration: underline;
+}
+
+.rc-list-group{
+    overflow-y: auto;
+    width: 270px;
+    height: auto;
+    border: 1px solid #ddd;
+}
+
+.rc-item {
+    width: 230px;
+    overflow: hidden;
+    white-space: nowrap;
+     -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    color: #337ab7;
+    cursor: pointer;
+    border-radius: 0px 0px 0px 0px;
+}
+
+.rc-item:hover {
+    text-decoration: underline;
+}

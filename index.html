@@ -1,0 +1,106 @@
+﻿<!-- ===============================================================
+         Developed by the Applications Prototype Lab
+   (c) 2016 Esri | http://www.esri.com/legal/software-license
+=============================================================== -->
+<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+    <title>Submarine Cables</title>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+    <meta name='viewport' content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no'>
+    <meta name='author' content='Esri' />
+    <meta name='keywords' content='global submarine cables internet telecommunication' />
+    <meta name='description' content='This application displays the worldwide network of telecommunication cables.' />
+    <link type='text/css' rel='stylesheet' href='//js.arcgis.com/4.0beta3/esri/css/main.css'>
+    <link type='text/css' rel='stylesheet' href='css/bootstrap.min.css' />
+    <link type='text/css' rel='stylesheet' href='index.css'>
+    <script type='text/javascript' src='js/jquery-2.1.4.min.js'></script>
+    <script type='text/javascript' src='js/bootstrap.min.js'></script>
+    <script type='text/javascript' src='//js.arcgis.com/4.0beta3/'></script>
+    <script type='text/javascript' src='index.js'></script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-10866840-27', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+<body>
+    <div id='map'></div>
+    <div id='left-panel'>
+        <div id='banner'>
+            <div id='banner-text'>Submarine Cables</div>
+            <div id='button-info'><span class='glyphicon glyphicon-info-sign' aria-hidden='true'></span></div>
+        </div>
+        <div id='content'>
+            <div id='toolbar'>
+                <div class='btn-group' role='group' aria-label='navigation'>
+                    <button id='navigate-previous' type='button' class='btn btn-default'>
+                        <span class='glyphicon glyphicon-chevron-left' aria-hidden='true'></span>
+                    </button>
+                    <button id='navigate-next' type='button' class='btn btn-default'>
+                        <span class='glyphicon glyphicon-chevron-right' aria-hidden='true'></span>
+                    </button>
+                    <button id='navigate-home' type='button' class='btn btn-default'>
+                        <span class='glyphicon glyphicon-home' aria-hidden='true'></span>
+                    </button>
+                </div>
+                <input id='search' type='text' class='form-control' placeholder='Search for...' />
+            </div>
+            <div id='pages'>
+                <div id='page-home' class='rc-page'>
+                    <h3>Date</h3>
+                    <div id='home-years'></div>
+                    <h3>Cables</h3>
+                    <ul id='home-cables' class='list-group rc-list-group'></ul>
+                    <h3>Landing Points</h3>
+                    <ul id='home-cities' class='list-group rc-list-group'></ul>
+                </div>
+                <div id='page-year' class='rc-page'>
+                    <h3>Cables</h3>
+                    <ul id='year-cables' class='list-group rc-list-group'></ul>
+                </div>
+                <div id='page-cable' class='rc-page'>
+                    <h3 id='cable-name'></h3>
+                    <h4>Owner</h4>
+                    <p id='cable-owner'></p>
+                    <h4>Url</h4>
+                    <a id='cable-url' href='#' target='_blank'></a>
+                    <h4>Installed</h4>
+                    <div id='cable-year' class='rc-link'></div>
+                    <h4>Length</h4>
+                    <div id='cable-length'></div>
+                    <h4>Landing Points</h4>
+                    <ul id='cable-cities' class='list-group rc-list-group'></ul>
+                </div>
+                <div id='page-city' class='rc-page'>
+                    <h3 id='city-name'></h3>
+                    <h4>Latitude</h4>
+                    <p id='city-lat'></p>
+                    <h4>Longitude</h4>
+                    <p id='city-long'></p>
+                    <h4>Cables</h4>
+                    <ul id='city-cables' class='list-group rc-list-group'></ul>
+                </div>
+                <div id='page-search' class='rc-page'>
+                    <h3>Cables</h3>
+                    <ul id='search-cables' class='list-group rc-list-group'></ul>
+                    <h3>Landing Points</h3>
+                    <ul id='search-cities' class='list-group rc-list-group'></ul>
+                </div>
+            </div>
+            <div id='panel-info'>
+                <p>This application was designed and developed by <a href='http://www.esri.com'>Esri</a>'s <a href='http://blogs.esri.com/esri/apl/'>Applications Prototype Lab</a> in Redlands, California using Esri's <a href='https://developers.arcgis.com/javascript/'>ArcGIS API for JavaScript</a> (<a href='https://developers.arcgis.com/javascript/beta/'>beta</a>).</p>
+                <p>This application maps the global network of submarine communication cables. This app was inspired by <a href='https://www.telegeography.com'>TeleGeography</a>'s awesome <a href='http://www.submarinecablemap.com'>Submarine Cable Map</a>.</p>
+                <p>Data for this application was prepared by <a href='https://www.telegeography.com'>TeleGeography</a> and published <a href='https://github.com/telegeography/www.submarinecablemap.com'>here</a>. This data represents a cartographic representation of the actual data. For more information on, and access to, the authoritative data please visit the <a href='https://www.telegeography.com/research-services/global-bandwidth-research-service/index.html'>Global Bandwidth Research Service</a>.</p>
+                <p>Data was downloaded from <a href='https://www.google.com/fusiontables/DataSource?docid=1ThJlnFAEBqJdYWKCdcnqdsjSJE1mnzkwaOh3fL3X#map:id=3'>here</a> and <a href='https://www.google.com/fusiontables/DataSource?docid=117TmsWlGqILvN0UZYP9rhFhlWG_1lYdQw3-6CtTX#map:id=3'>here</a> as KML documents. The data is current as of November 2015.</p>
+                <button id='close-panel-info' type='button' class='btn btn-primary'>Close</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
