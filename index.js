@@ -226,6 +226,7 @@ function (
         $('#close-panel-info').click(function () {
             $('#panel-info').hide();
         });
+        $('a').attr('target', '_blank');
 
         function downloadYears() {
             var defer = new $.Deferred();
